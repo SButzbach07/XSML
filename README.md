@@ -66,3 +66,6 @@ Like HTML, XSML has elements to choose from. Here is a list of all that can be u
 * `_parent`: Opens in the  parent frame
 * `_self`: Opens in the same tab/window
 * `_top`: Opens in the full body of the window
+
+## Update Log
+* May 28, 2022: The XSML 1.0 Pre-release is now available on GitHub! View the release [here](https://github.com/SButzbach07/XSML/releases/tag/Pre-release). Make sure to stop by the discussion board to give ideas, suggestions, and feeling about this ongoing project.
