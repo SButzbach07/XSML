@@ -20,7 +20,7 @@ This is a lot for 3 lines of code, but we'll break it down.
 * `<xsml title="..." language="..." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/xsml.xsd"></xsml>`: This tag sets the root element for XSML.
     * The `title` attribute sets the document title when displayed.
     * The `language` attribute sets the language code for the document. Just as a note, the `language` attribute does not change the language displayed from output.
-    * The `xmlns:xsi` attribute sets the namespace for the `xsi` prefix. This is required to load `xsml.xsd` to validate your file. It's recommended to set the attribute to _http://www.w3.org/2001/XMLSchema-instance_.
+    * The `xmlns:xsi` attribute sets the namespace for the `xsi` prefix. This is required to load `xsml.xsd` to validate your file. It's recommended to set the attribute to `http://www.w3.org/2001/XMLSchema-instance`.
     * The `xsi:noNamespaceSchemaLocation` attribute references _xsml.xsd_ to the document for validation. `noNamespaceSchemaLocation` does not require a namespace to find the schema file, but you do need the namespace to use the `noNamespaceSchemaLocation` attribute.
 
 Like HTML, XSML has elements to choose from. Here is a list of all that can be used.
