@@ -26,7 +26,7 @@
 
     <!-- <bold> Element -->
     <xsl:template match="bold">
-        <p><b><xsl:apply-templates /></b></p>
+        <p><b><xsl:value-of select="text()" /></b></p>
     </xsl:template>
 
     <!-- <break> Element -->
@@ -47,7 +47,7 @@
             <xsl:attribute name="onclick">
                 <xsl:value-of select="@action" />
             </xsl:attribute>
-            <xsl:apply-templates />
+            <xsl:value-of select="text()" />
         </button>
     </xsl:template>
 
@@ -64,28 +64,28 @@
     <xsl:template match="header">
         <xsl:choose>
             <xsl:when test="@level=1">
-                <h1><xsl:apply-templates /></h1>
+                <h1><xsl:value-of select="text()" /></h1>
             </xsl:when>
             <xsl:when test="@level=2">
-                <h2><xsl:apply-templates /></h2>
+                <h2><xsl:value-of select="text()" /></h2>
             </xsl:when>
             <xsl:when test="@level=3">
-                <h3><xsl:apply-templates /></h3>
+                <h3><xsl:value-of select="text()" /></h3>
             </xsl:when>
             <xsl:when test="@level=4">
-                <h4><xsl:apply-templates /></h4>
+                <h4><xsl:value-of select="text()" /></h4>
             </xsl:when>
             <xsl:when test="@level=5">
-                <h5><xsl:apply-templates /></h5>
+                <h5><xsl:value-of select="text()" /></h5>
             </xsl:when>
             <xsl:when test="@level=6">
-                <h6><xsl:apply-templates /></h6>
+                <h6><xsl:value-of select="text()" /></h6>
             </xsl:when>
     </xsl:template>
 
     <!-- <highlight> Element -->
     <xsl:template match="highlight">
-        <p><mark><xsl:apply-templates /></mark></p>
+        <p><mark><xsl:value-of select="text()" /></mark></p>
     </xsl:template>
 
     <!-- <hyperlink> Element -->
@@ -97,7 +97,7 @@
             <xsl:attribute name="target">
                 <xsl:value-of select="@target" />
             </xsl:attribute>
-            <xsl:apply-templates />
+            <xsl:value-of select="text()" />
         </a>
     </xsl:template>
 
@@ -115,7 +115,7 @@
 
     <!-- <italic> Element -->
     <xsl:template match="italic">
-        <p><i><xsl:apply-templates /></i></p>
+        <p><i><xsl:value-of select="text()" /></i></p>
     </xsl:template>
 
     <!-- <list> Element -->
@@ -125,7 +125,7 @@
                 <ol>
                     <!-- <item> Element -->
                     <xsl:for-each select="item">
-                        <li><xsl:apply-templates /></li>
+                        <li><xsl:value-of select="text()" /></li>
                     </xsl:for-each>
                 </ol>
             </xsl:when>
@@ -133,7 +133,7 @@
                 <ul>
                     <!-- <item> Element -->
                     <xsl:for-each select="item">
-                        <li><xsl:apply-templates /></li>
+                        <li><xsl:value-of select="text()" /></li>
                     </xsl:for-each>
                 </ul>
             </xsl:when>
@@ -144,27 +144,27 @@
     <xsl:template match="quote">
         <xsl:choose>
             <xsl:when test="@type='block'">
-                <blockquote><xsl:apply-templates /></blockquote>
+                <blockquote><xsl:value-of select="text()" /></blockquote>
             </xsl:when>
             <xsl:when test="@type='inline'">
-                <q><xsl:apply-templates /></q>
+                <q><xsl:value-of select="text()" /></q>
             </xsl:when>
         </xsl:choose>
     </xsl:template>
 
     <!-- <strikethrough> Element -->
     <xsl:template match="strikethrough">
-        <p><del><xsl:apply-templates /></del></p>
+        <p><del><xsl:value-of select="text()" /></del></p>
     </xsl:template>
 
     <!-- <subscript> Element -->
     <xsl:template match="subscript">
-        <p><sub><xsl:apply-templates /></sub></p>
+        <p><sub><xsl:value-of select="text()" /></sub></p>
     </xsl:template>
 
     <!-- <superscript> Element -->
     <xsl:template match="superscript">
-        <p><sup><xsl:apply-templates /></sup></p>
+        <p><sup><xsl:value-of select="text()" /></sup></p>
     </xsl:template>
 
     <!-- <table> Element -->
@@ -177,10 +177,10 @@
                     <xsl:for-each name="cell">
                         <xsl:choose>
                             <xsl:when test="@type='header'">
-                                <th><xsl:apply-templates /></th>
+                                <th><xsl:value-of select="text()" /></th>
                             </xsl:when>
                             <xsl:when test="@type='normal'">
-                                <td><xsl:apply-templates /></td>
+                                <td><xsl:value-of select="text()" /></td>
                             </xsl:when>
                         </xsl:choose>
                     </xsl:for-each>
@@ -191,12 +191,12 @@
 
     <!-- <text> Element -->
     <xsl:template match="text">
-        <p><xsl:apply-templates /></p>
+        <p><xsl:value-of select="text()" /></p>
     </xsl:template>
 
     <!-- <underline> Element -->
     <xsl:template match="underline">
-        <p><ins><xsl:apply-templates /></ins></p>
+        <p><ins><xsl:value-of select="text()" /></ins></p>
     </xsl:template>
 
     <!-- <video> Element -->
@@ -223,4 +223,19 @@
     </xsl:template>
 
     <!-- <xsml> (Main) Element -->
+    <xsl:template match="xsml">
+        <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
+            <xsl:attribute name="lang">
+                <xsl:value-of select="@language" />
+            </xsl:atribute>
+            <head>
+                <title><xsl:value-of select="@title" /></title>
+                <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+            </head>
+            <body>
+                <xsl:apply-templates />
+            </body>
+        </html>
+    </xsl:template>
 </xsl:stylesheet>
