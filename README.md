@@ -36,10 +36,10 @@ Like HTML, XSML has elements to choose from. Here is a list of all that can be u
 |`<embed source="filename" />`|Defines an interactive object|No content|`source`: References an interactive file from a local or remote server|
 |`<header level="header-level">Text Content</header>`|Defines a header|Text only|`level`: Sets the size of the header. Acceptable values: 1-6|
 |`<highlight>Text Content</highlight>`|Defines highlighted text|Text only|No attributes|
+|`<hyperlink location="filename">Text Content</hyperlink>`|Defines a link to another webpage|Text only|`location`: References a webpage from a local or remote server|
 |`<image source="filename" alttext="Text Content" />`|Defines an image|No Content|<li>`source`: References an image from a local or remote server</li><li>`alt-text`: Displays text if the image fails to load</li>|
 |`<italic>Text Content</italic>`|Defines italicized text|Text only|No attributes|
 |`<item>Text Content</item>`|Defines a list item|Text only|No attributes|
-|`<link location="filename">Text Content</link>`|Defines a link to another webpage|Text only|`location`: References a webpage from a local or remote server|
 |`<list type="list-type">Element Content</list>`|Defines a list|Elements allowed: `<item>`|`type`: Sets the type of list. Acceptable values: `ordered`, `unordered`|
 |`<quote type="quote-type">Text Content</quote>`|Defines a quote|Text only|`type`: Sets the type of quote. Acceptable values: `block`, `inline`|
 |`<row>Element Content</row>`|Defines a row in a table|Elements allowed: `<cell>`|No attributes|
