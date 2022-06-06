@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-	XSL Stylesheet for XML Site Markup Language
+	XSL Stylesheet for eXtensible Site Markup Language
 	Version 1.0
 	Created by Scot Butzbach
 	
