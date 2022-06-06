@@ -2,7 +2,7 @@
 A more human-readable web alternative to HTML.
 
 ## What is XSML?
-XSML stands for XML Site Markup Language. XSML was based off of HTML (Hyper Text Markup Language) and written in XML. It is a more human-readable alternative to HTML. This project is potentially the start of interactive, client-side, XML-based sites.
+XSML stands for eXtensible Site Markup Language. XSML was based off of HTML (Hyper Text Markup Language) and written in XML. It is a more human-readable alternative to HTML. This project is potentially the start of interactive, client-side, XML-based sites.
 
 ## Where to start?
 All you need to do is download an official release from this repository. Once extracted, make sure the folder you want to host your XML files in has xsml.xsl and xsml.xsd. In your XML file, add the following tags:
