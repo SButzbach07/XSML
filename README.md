@@ -8,9 +8,9 @@ XSML stands for eXtensible Site Markup Language. XSML was based off of HTML (Hyp
 All you need to do is download an official release from this repository. Once extracted, make sure the folder you want to host your XML files in has xsml.xsl and xsml.xsd. In your XML file, add the following tags:
 
 ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <?xml-stylesheet type="text/xsl" href="xsml.xsl"?>
-    <xsml title="Document Title Here" language="Language Code Here" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsml.xsd"></xsml>
+	<?xml version="1.0" encoding="UTF-8"?>
+	<?xml-stylesheet type="text/xsl" href="xsml.xsl"?>
+	<xsml title="Document Title Here" language="Language Code Here" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsml.xsd"></xsml>
 ```
 
 This is a lot for 3 lines of code, but we'll break it down.
@@ -18,10 +18,10 @@ This is a lot for 3 lines of code, but we'll break it down.
 * `<?xml version="1.0" encoding="UTF-8"?>`: This tag declares the file to be an XML document. It sets the XML version and the character set to use.
 * `<?xml-stylesheet type="text/xsl" href="xsml.xsl"?>`: This tag references _xsml.xsl_ to the document for XML transformation.
 * `<xsml title="..." language="..." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsml.xsd"></xsml>`: This tag sets the root element for XSML.
-    * The `title` attribute sets the document title when displayed.
-    * The `language` attribute sets the language code for the document. Just as a note, the `language` attribute does not change the language displayed from output.
-    * The `xmlns:xsi` attribute sets the namespace for the `xsi` prefix. This is required to load `xsml.xsd` to validate your file. It's recommended to set the attribute to `http://www.w3.org/2001/XMLSchema-instance`.
-    * The `xsi:noNamespaceSchemaLocation` attribute references _xsml.xsd_ to the document for validation. `noNamespaceSchemaLocation` does not require a namespace to find the schema file, but you do need the namespace to use the `noNamespaceSchemaLocation` attribute.
+	* The `title` attribute sets the document title when displayed.
+	* The `language` attribute sets the language code for the document. Just as a note, the `language` attribute does not change the language displayed from output.
+	* The `xmlns:xsi` attribute sets the namespace for the `xsi` prefix. This is required to load `xsml.xsd` to validate your file. It's recommended to set the attribute to `http://www.w3.org/2001/XMLSchema-instance`.
+	* The `xsi:noNamespaceSchemaLocation` attribute references _xsml.xsd_ to the document for validation. `noNamespaceSchemaLocation` does not require a namespace to find the schema file, but you do need the namespace to use the `noNamespaceSchemaLocation` attribute.
 
 Like HTML, XSML has elements to choose from. Here is a list of all that can be used.
 
