@@ -25,19 +25,19 @@ This is a lot for 3 lines of code, but we'll break it down.
 
 Like HTML, XSML has elements to choose from. Here is a list of all that can be used.
 
-## XSML ELements
+## XSML Elements
 |Element|Definition|Content|Attributes|
 |:-:|-|-|-|
-|`<audio source="filename" type="mime-type" />`|Defines an audio object|No content|<li>`source`: References an audio file from a local or remote server</li><li>`type`: The MIME type of the referenced file. See table below for available MIME types|
+|`<audio location="filename" type="mime-type" />`|Defines an audio object|No content|<li>`location`: References an audio file from a local or remote server</li><li>`type`: The MIME type of the referenced file. See table below for available MIME types|
 |`<bold>Text Content</bold>`|Defines bolded text|Text only|No attributes|
 |`<break type="break-type" />`|Defines a line or block break|No content|`type`: The type of break of the element. Acceptable values: `block`, `inline`|
 |`<button action="JavaScript-code">Text Content</button>`|Defines a clickable button|Text only|`action`: The JavaScript code to execute upon button click|
 |`<cell type="text-type">Text Content</cell>`|Defines a cell in a table|Text only|`type`: Sets the type of text format. Acceptable values: `header`, `normal`|
-|`<embed source="filename" />`|Defines an interactive object|No content|`source`: References an interactive file from a local or remote server|
+|`<embed location="filename" />`|Defines an interactive object|No content|`source`: References an interactive file from a local or remote server|
 |`<header level="header-level">Text Content</header>`|Defines a header|Text only|`level`: Sets the size of the header. Acceptable values: 1-6|
 |`<highlight>Text Content</highlight>`|Defines highlighted text|Text only|No attributes|
 |`<hyperlink location="filename">Text Content</hyperlink>`|Defines a link to another webpage|Text only|`location`: References a webpage from a local or remote server|
-|`<image source="filename" alttext="Text Content" />`|Defines an image|No Content|<li>`source`: References an image from a local or remote server</li><li>`alt-text`: Displays text if the image fails to load</li>|
+|`<image location="filename" alt-text="Text Content" />`|Defines an image|No Content|<li>`location`: References an image from a local or remote server</li><li>`alt-text`: Displays text if the image fails to load</li>|
 |`<italic>Text Content</italic>`|Defines italicized text|Text only|No attributes|
 |`<item>Text Content</item>`|Defines a list item|Text only|No attributes|
 |`<list type="list-type">Element Content</list>`|Defines a list|Elements allowed: `<item>`|`type`: Sets the type of list. Acceptable values: `ordered`, `unordered`|
@@ -49,8 +49,8 @@ Like HTML, XSML has elements to choose from. Here is a list of all that can be u
 |`<table>Element Content</table>`|Defines a table|Elements allowed: `<row>`|No attributes|
 |`<text>Text Content</text>`|Defines normal text|Text only|No attributes|
 |`<underline>Text Content</underline>`|Defines underlined text|Text only|No attributes|
-|`<video source="filename" type="mime-type" />`|Defines a video object|No content|<li>`source`: References a video file from a local or remote server</li><li>`type`: The MIME type of the referenced file. See table below for available MIME types</li>|
-|`<webframe source="filename" />`|Defines an external webpage frame|No content|`location`: References a webpage to display|
+|`<video location="filename" type="mime-type" />`|Defines a video object|No content|<li>`location`: References a video file from a local or remote server</li><li>`type`: The MIME type of the referenced file. See table below for available MIME types</li>|
+|`<webframe location="filename" />`|Defines an external webpage frame|No content|`location`: References a webpage to display|
 
 ### MIME Types (Full web support) (applies to `<audio>` and `<video>` only)
 |File extension|File type|MIME type|
