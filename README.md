@@ -69,3 +69,4 @@ Like HTML, XSML has elements to choose from. Here is a list of all that can be u
 
 ## Update Log
 * May 28, 2022: The XSML 1.0 Pre-release is now available on GitHub! View the release [here](https://github.com/SButzbach07/XSML/releases/tag/Pre-release). Make sure to stop by the discussion board to give ideas, suggestions, and feeling about this ongoing project.
+* October 9, 2022: XSML 1.0 has been officially been released. View the release [here](https://github.com/SButzbach07/XSML/releases/tag/Release). Stop by the discussion board for comments, improvements, bugs, and suggestions for the next big release.
