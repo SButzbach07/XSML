@@ -33,7 +33,7 @@ Like HTML, XSML has elements to choose from. Here is a list of all that can be u
 |`<break type="break-type" />`|Defines a line or block break|No content|`type`: The type of break of the element. Acceptable values: `block`, `inline`|
 |`<button action="JavaScript-code">Text Content</button>`|Defines a clickable button|Text only|`action`: The JavaScript code to execute upon button click|
 |`<cell type="text-type">Text Content</cell>`|Defines a cell in a table|Text only|`type`: Sets the type of text format. Acceptable values: `header`, `normal`|
-|`<embed location="filename" />`|Defines an interactive object|No content|`source`: References an interactive file from a local or remote server|
+|`<embed location="filename" />`|Defines an interactive object|No content|`location`: References an interactive file from a local or remote server|
 |`<header level="header-level">Text Content</header>`|Defines a header|Text only|`level`: Sets the size of the header. Acceptable values: 1-6|
 |`<highlight>Text Content</highlight>`|Defines highlighted text|Text only|No attributes|
 |`<hyperlink location="filename">Text Content</hyperlink>`|Defines a link to another webpage|Text only|`location`: References a webpage from a local or remote server|
