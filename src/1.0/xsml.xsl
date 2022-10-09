@@ -17,7 +17,7 @@
 		<audio controls="controls">
 			<source>
 				<xsl:attribute name="src">
-					<xsl:value-of select="@source" />
+					<xsl:value-of select="@location" />
 				</xsl:attribute>
 				<xsl:attribute name="type">
 					<xsl:value-of select="@type" />
@@ -58,7 +58,7 @@
 		<script src="https://unpkg.com/@ruffle-rs/ruffle" type="text/javascript"></script>
 		<object>
 			<xsl:attribute name="data">
-				<xsl:value-of select="@source" />
+				<xsl:value-of select="@location" />
 			</xsl:attribute>
 		</object>
 	</xsl:template>
@@ -109,10 +109,10 @@
 	<xsl:template match="image">
 		<img>
 			<xsl:attribute name="src">
-				<xsl:value-of select="@source" />
+				<xsl:value-of select="@location" />
 			</xsl:attribute>
 			<xsl:attribute name="alt">
-				<xsl:value-of select="@alttext" />
+				<xsl:value-of select="@alt-text" />
 			</xsl:attribute>
 		</img>
 	</xsl:template>
@@ -208,7 +208,7 @@
 		<video controls="controls">
 			<source>
 				<xsl:attribute name="src">
-					<xsl:value-of select="@source" />
+					<xsl:value-of select="@location" />
 				</xsl:attribute>
 				<xsl:attribute name="type">
 					<xsl:value-of select="@type" />
