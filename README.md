@@ -9,8 +9,8 @@ All you need to do is download an official release from this repository. Once ex
 
 ```xml
     <?xml version="1.0" encoding="UTF-8"?>
-    <?xml-stylesheet type="text/xsl" href="/xsml.xsl"?>
-    <xsml title="Document Title Here" language="Language Code Here" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/xsml/xsd"></xsml>
+    <?xml-stylesheet type="text/xsl" href="xsml.xsl"?>
+    <xsml title="Document Title Here" language="Language Code Here" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsml.xsd"></xsml>
 ```
 
 This is a lot for 3 lines of code, but we'll break it down.
