@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
 	XSL Stylesheet for eXtensible Site Markup Language
 	Version 1.0
 	Created by Scot Butzbach
 	
-	To use: <?xml-stylesheet type="text/xsl" href="/xsml.xsl"?>
+	To use: <?xml-stylesheet type="text/xsl" href="xsml.xsl"?>
 -->
+
 <xsl:stylesheet version="3.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<!-- Set output to XHTML 1.0 Transitional and indent output -->
 	<xsl:output method="xhtml" version="1.0" encoding="UTF-8" indent="yes" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
