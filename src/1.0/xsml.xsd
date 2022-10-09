@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
     XML Schema for eXtensible Site Markup Language
     Version 1.0
     Created by Scot Butzbach
 
-    To use <xsml ... xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/xsml.xsd"></xsml>
+    To use <xsml ... xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsml.xsd"></xsml>
 -->
+
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
     <!-- Simple Elements -->
     <xs:element name="bold" type="xs:string" />
@@ -17,8 +19,7 @@
     <xs:element name="text" type="xs:string" />
     <xs:element name="underline" type="xs:string" />
 
-    <!-- Complex Elements -->
-    <!-- Empty Elements -->
+    <!-- Complex Empty Elements -->
     <xs:element name="audio">
         <xs:complexType>
             <xs:attribute ref="source" use="required" />
@@ -58,7 +59,7 @@
         </xs:complexType>
     </xs:element>
     
-    <!-- Elements containing text -->
+    <!-- Complex Text-Only Elements -->
     <xs:element name="button">
         <xs:complexType>
             <xs:simpleContent>
@@ -107,7 +108,7 @@
         </xs:complexType>
     </xs:element>
     
-    <!-- Elements containing elements-->
+    <!-- Complex Element-Only Elements -->
     <xs:element name="list">
         <xs:complexType>
             <xs:sequence>
