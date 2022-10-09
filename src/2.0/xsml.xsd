@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	XML Schema for eXtensible Site Markup Language
+	Version 2.0 Pre-release
+	Created by Scot Butzbach
+
+	To use <xsml ... xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsml.xsd"></xsml>
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<!-- Text Modifiers -->
+	<xs:group name="textModifiers">
+		<xs:all>
+			<xs:element name="bold" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="highlight" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="italic" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="strikethrough" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="subscript" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="superscript" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="underline" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+		</xs:all>
+	</xs:group>
+
+	<!-- Empty Elements -->
+	<xs:element name="audio">
+		<xs:complexType>
+			<xs:attribute ref="location" use="required" />
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="audio/mpeg|audio/ogg|audio/wav" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="break">
+		<xs:complexType>
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="block|inline" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="embed">
+		<xs:complexType>
+			<xs:attribute ref="location" use="required" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="image">
+		<xs:complexType>
+			<xs:attribute ref="location" use="required" />
+			<xs:attribute name="alt-text" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="video">
+		<xs:complexType>
+			<xs:attribute ref="location" use="required" />
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="video/mp4|video/ogg|video/webm" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="webframe">
+		<xs:complexType>
+			<xs:attribute ref="location" use="required" />
+		</xs:complexType>
+	</xs:element>
+	
+	<!-- Complex Element-Only Elements -->
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="item" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:attribute ref="type" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="row">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="cell" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="table">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="row" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<!-- Complex Mixed Elements -->
+	<xs:element name="button">
+		<xs:complexType mixed="true">
+			<xs:group ref="textModifiers" />
+			<xs:attribute name="action" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="cell">
+		<xs:complexType mixed="true">
+			<xs:group ref="textModifiers" />
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="header|normal" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="header">
+		<xs:complexType mixed="true">
+			<xs:group ref="textModifiers" />
+			<xs:attribute name="level" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:positiveInteger">
+						<xs:minInclusive value="1" />
+						<xs:maxInclusive value="6" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="hyperlink">
+		<xs:complexType mixed="true">
+			<xs:group ref="textModifiers" />
+			<xs:attribute ref="location" use="required" />
+			<xs:attribute name="target" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="item">
+		<xs:complexType mixed="true">
+			<xs:group ref="textModifiers" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="quote">
+		<xs:complexType mixed="true">
+			<xs:group ref="textModifiers" />
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="block|inline" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="text">
+		<xs:complexType mixed="true">
+			<xs:group ref="textModifiers" />
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Shared Attributes -->
+	<xs:attribute name="location" type="xs:string" />
+
+	<!-- <xsml> (Main) Element -->
+	<xs:element name="xsml">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="audio" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="break" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="button" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="embed" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="header" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="hyperlink" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="image" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="list" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="quote" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="table" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="text" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="video" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="webframe" minOccurs="0" maxOccurs="unbounded" />
+			</xs:all>
+			<xs:attribute name="title" type="xs:string" use="required" />
+			<xs:attribute name="language" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[a-z][a-z]-[A-Z][A-Z]" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
