@@ -22,7 +22,7 @@
     <!-- Complex Empty Elements -->
     <xs:element name="audio">
         <xs:complexType>
-            <xs:attribute ref="source" use="required" />
+            <xs:attribute ref="location" use="required" />
             <xs:attribute ref="type" use="required" />
         </xs:complexType>
     </xs:element>
@@ -35,27 +35,27 @@
     
     <xs:element name="embed">
         <xs:complexType>
-            <xs:attribute ref="source" use="required" />
+            <xs:attribute ref="location" use="required" />
         </xs:complexType>
     </xs:element>
     
     <xs:element name="image">
         <xs:complexType>
-            <xs:attribute ref="source" use="required" />
-            <xs:attribute name="alttext" type="xs:string" use="required" />
+            <xs:attribute ref="location" use="required" />
+            <xs:attribute name="alt-text" type="xs:string" use="required" />
         </xs:complexType>
     </xs:element>
     
     <xs:element name="video">
         <xs:complexType>
-            <xs:attribute ref="source" use="required" />
+            <xs:attribute ref="location" use="required" />
             <xs:attribute ref="type" use="required" />
         </xs:complexType>
     </xs:element>
     
     <xs:element name="webframe">
         <xs:complexType>
-            <xs:attribute ref="source" use="required" />
+            <xs:attribute ref="location" use="required" />
         </xs:complexType>
     </xs:element>
     
@@ -91,7 +91,7 @@
         <xs:complexType>
             <xs:simpleContent>
                 <xs:extension base="xs:string">
-                    <xs:attribute name="location" type="xs:string" use="required" />
+                    <xs:attribute ref="location" use="required" />
                     <xs:attribute name="target" type="xs:string" use="required" />
                 </xs:extension>
             </xs:simpleContent>
@@ -139,6 +139,10 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <!-- Attributes -->
+    <xs:attribute name="location" type="xs:string" />
+    <xs:attribute name="type" type="xs:string" />
 
     <!-- <xsml> (Main) Element -->
     <xs:element name="xsml">
